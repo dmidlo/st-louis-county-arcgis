@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "stlouis-county-gis"
+version = "0.1.0"
+description = "Async ArcGIS REST client for St. Louis County (MN) Open Data services"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "You", email = "you@example.com" }]
+dependencies = [
+  "httpx>=0.27.0",
+  "pydantic>=2.12.5",
+  "pydantic-settings>=2.2.0",
+]
+
+[project.urls]
+Homepage = "https://gis.stlouiscountymn.gov/landexplorer/"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stlouis_county_gis"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.pyright]
+typeCheckingMode = "basic"
